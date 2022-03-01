@@ -23,5 +23,6 @@
             <input type="submit" value="login">  
                 <b>${invalid}</b>
                 <b>${logout}</b>
+        </form>
     </body>
 </html>
