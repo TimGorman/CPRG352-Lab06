@@ -15,11 +15,21 @@
         <h2>List</h2> 
         <form action="ShoppingList" method="post" >
             <label>Add Item:</label>
-            <input type="text" name="itemdesc" value="">
+            <input type="text" name="itemname" value="">
             <input type="submit" value="Add">
             <input type="hidden" name="action" value="add">
         </form>
         
-        <
+        <c:if test="${itemlist.size() > 0}">
+            <form action="ShoppingList" method="post">
+                <ul>
+                    <c:forEach items="${itemlist}" var="item">
+                        <li> <input type="radio" name="itemname" value=${item}>${item}</li>
+                    </c:forEach>      
+                </ul>
+                <input type="submit" value="Delete">
+                <input type="hidden" name="action" value="delete">
+            </form>
+        </c:if>
     </body>
 </html>
